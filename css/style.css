@@ -1,0 +1,212 @@
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+
+* {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+#qui input[type=text] {
+	margin-bottom: 10px;
+}
+
+.file-caption {
+	padding: 4px 12px;
+}
+.file-thumbnail-footer {
+	display: none;
+}
+.file-preview-frame {
+	border: none;
+	box-shadow: none;
+	padding: 0;
+	width: auto;
+}
+
+#content {
+	margin: 15px;
+}
+
+/*map*/
+#map {
+	width: 100%;
+	height: 424px;
+	background-color: white;
+	background-image: url(../img/loading.gif);
+	background-position: center center;
+	background-repeat: no-repeat;
+	padding: 0;
+	margin: 0;
+}
+
+#map.invalid {
+	border: 1px solid #df0101;
+	box-shadow: 0px 0px 7px #df0101;
+}
+
+label.GPshowAdvancedToolPicto {
+	margin-bottom: 0px;
+}
+
+#avertissement-geolocalisation {
+	font-weight: bold;
+	color: #df0101;
+}
+
+#ou_carte {
+	height:424px;
+}
+
+#ou_coordonnees {
+	height:424px;
+	display: none;
+	padding: 10px 0 0 0;
+}
+
+#saisie-coord {
+	position: absolute;
+	z-index: 750;
+	margin-left: 180px;
+	border: 2px solid #2D2D2D;
+	margin-top: 2px;
+	width: 168px;
+	background-color: #fff;
+}
+
+.bord-bt {
+	background-color: #464646;
+	border: 1px solid #464646;
+}
+
+.lb-bt {
+	font-family: Arial,Helvetica,sans-serif;
+	margin: 1px; color: #e1e1e1;
+	background-color: #2d2d2d;
+	padding: 2px 0px 3px 0px;
+	font-weight: bold;
+	font-size: 11px;
+	cursor: pointer;
+	text-align: center;
+}
+
+#qui {
+	height: auto;
+	padding: 10px 0 0 0;
+	*background-color: DarkCyan;
+}
+
+#quand {
+	height: auto;
+	padding: 10px 0;
+	*background-color: DarkSlateGray;
+}
+
+#selection-champ {
+	*background-color: LightSlateGray;
+	margin: 0px;
+	padding-top: 10px;
+}
+
+#quoi {
+	height: 229px;
+	padding-top: 15px;
+	*background-color: LightSlateGray;
+}
+
+#confiance {
+	*background-color: SeaGreen;
+	height: 43px;
+	margin: 0;
+}
+
+#valid {
+	padding: 10px 10px;
+	*background-color: LightSteelBlue;
+}
+
+#photos {
+	height: auto;
+	min-height: 196px;
+	padding: 10px 0;
+	*background-color: LightBlue;
+}
+#ecologie {
+	height: auto;
+	padding: 10px 0;
+	*background-color: Teal;
+}
+
+#contenu-taxons {
+	*background-color: DeepSkyBlue;
+	margin-top: 10px;
+	max-height: 155px;
+	overflow: auto;
+}
+#contenu-taxons p {
+	margin: 0;
+}
+
+.form-group {
+	margin: 0;
+}
+
+.form-control {
+	height: auto;
+}
+.input-group .form-control {
+	z-index: 1;
+}
+
+.invalid {
+	box-shadow: 1px 1px 5px 1px red;
+}
+
+label[for=accept-condition] {
+	font-weight: normal;
+}
+
+.glyphicon-remove,
+.glyphicon-eye-open {
+	color: #555;
+	cursor: pointer;
+}
+.glyphicon-remove:hover {
+	color: red;
+}
+.glyphicon-eye-open:hover {
+	color: green;
+}
+
+#ui-datepicker-div  {
+	z-index: 2;
+}
+
+textarea.form-control {
+	height: 113px;
+}
+
+.lien-taxon {
+	margin-left: 5px;
+}
+
+#chicken {
+	display: none;
+}
+
+.tooltip-info {
+	color: #333;
+	font-weight: normal;
+	font-size: 12px;
+}
+.tooltip-info:hover {
+	color: #333;
+}
