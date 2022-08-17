@@ -26,23 +26,13 @@ $(document).ready(function () {
               $("#contenu-taxons").append(
                 "<p id='" + i + "'>" +
                 $("#taxons").val() +
-                "<a class='lien-taxon' href='http://www.cbnmc.fr/cartoweb3/Chloris/atlas_mc/fiche_des_mc.php?code_taxon=" +
-                code.chloris +
-                "' target='_blank' title='Consulter la monographie sur Chloris'>Chloris</a>" +
                 "<span class='lien-taxon glyphicon glyphicon-remove' title='Supprimer de la liste' " +
                 "onclick='supprimeLigneTaxon(" + i + ")'></span></p>"
               );
-            }
-            else {
+            } else {
               $("#contenu-taxons").append(
                 "<p id='" + i + "'>" +
                 $("#taxons").val() +
-                "<a class='lien-taxon' href='http://www.cbnmc.fr/cartoweb3/Chloris/atlas_mc/fiche_des_mc.php?code_taxon=" +
-                code.chloris +
-                "' target='_blank' title='Consulter la monographie sur Chloris'>Chloris</a>" +
-                "<a class='lien-taxon' href='http://www.pifh.fr/pifh/pifh/index.php/fiche_descriptive/OuvrirFicheDescriptive/" +
-                code.taxref +
-                "' target='_blank' title='Consulter la monographie sur le PIFH'>PIFH</a>" +
                 "<span class='lien-taxon glyphicon glyphicon-remove' title='Supprimer de la liste' " +
                 "onclick='supprimeLigneTaxon(" + i + ")'></span></p>"
               );
