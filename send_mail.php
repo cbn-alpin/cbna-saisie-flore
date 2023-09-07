@@ -112,8 +112,7 @@ $message_html .= "</ul><br />
         <u>Remarque</u> : <span id='remarque'>$remarque</span><br /><br />";
 $message_txt = strip_tags($message_html);
 
-// A supprimer pour test avec yahoo
-$headers = "From: $expediteur <$mail>".$passage_ligne;
+$headers = "Reply-To: $expediteur <$mail>".$passage_ligne;
 if (isset($_POST['recevoir'])) {
     $headers .= "Cc: $mail".$passage_ligne;
 }
