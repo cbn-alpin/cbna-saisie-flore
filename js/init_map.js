@@ -244,6 +244,8 @@ function remplissageInput(objet, centroide, type_objet) {
 $(document).ready(() => {
   Gp.Services.getConfig({
     apiKey: 'cartes,calcul,ortho,parcellaire',
+    serverUrl: "/autoconf.custom.json",
+    callbackSuffix : "",
     onSuccess: initMap,
   });
 });
