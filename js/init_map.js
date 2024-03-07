@@ -11,22 +11,19 @@ function initMap() {
 
   // Création des couche
   var lyrOrtho = L.geoportalLayer.WMTS({
-    apiKey: 'ortho',
     layer: 'ORTHOIMAGERY.ORTHOPHOTOS',
   });
   var lyrMaps = L.geoportalLayer.WMTS({
-    apiKey: 'cartes',
     layer: 'GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2',
   });
   var lyrCad = L.geoportalLayer.WMS(
     {
-      apiKey: 'parcellaire',
       layer: 'CADASTRALPARCELS.PARCELS',
     },
     {
-    transparent : true,
-    format: 'image/png',
-    styles: 'bdparcellaire_o',
+      transparent : true,
+      format: 'image/png',
+      styles: 'bdparcellaire_o',
     }
   );
   map.addLayer(lyrOrtho);
@@ -40,13 +37,14 @@ function initMap() {
         layer: lyrCad,
         config: {
           title: 'Parcelles cadastrales',
-          visibility: false
+          visibility: false,
         }
       },
       {
         layer: lyrOrtho,
         config: {
           title: 'Photographies aériennes',
+          visibility: false,
         }
       },
       {
@@ -244,7 +242,7 @@ function remplissageInput(objet, centroide, type_objet) {
 $(document).ready(() => {
   Gp.Services.getConfig({
     apiKey: 'cartes,calcul,ortho,parcellaire',
-    serverUrl: "/autoconf.custom.json",
+    serverUrl: "/plugins/geoportail/autoconf.custom.json",
     callbackSuffix : "",
     onSuccess: initMap,
   });
