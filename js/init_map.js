@@ -241,9 +241,8 @@ function remplissageInput(objet, centroide, type_objet) {
 
 $(document).ready(() => {
   Gp.Services.getConfig({
-    apiKey: 'cartes,calcul,ortho,parcellaire',
-    serverUrl: "/plugins/geoportail/autoconf.custom.json",
-    callbackSuffix : "",
+    customConfigFile: "/plugins/geoportail/autoconf.custom.json",
+    timeOut: 20000,
     onSuccess: initMap,
   });
 });
