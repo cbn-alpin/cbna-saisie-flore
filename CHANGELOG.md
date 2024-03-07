@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.2] - 2024-03-07
+
+### Added
+
+- Add local file "`plugins/geoportail/autoconf.custom.json`" to avoid API termination.
+
+### Fixed
+
+- Remove the `apiKey` parameter from `geoportalLayer` to use the correct API URL.
+
 ## [v1.0.1] - 2023-09-07
 
 ### Added
