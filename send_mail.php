@@ -5,6 +5,34 @@ include 'config.php';
 
 $temp = '';
 
+//===== Vérification du token reCAPTCHA =====
+$cap_token = $_POST['cap-token'] ?? '';
+$cap_body = json_encode([
+    'secret' => $saisie_flore_config['captcha-secret-key'],
+    'response' => $cap_token,
+]);
+$cap_opts = ['http' =>
+    [
+        'method'  => 'POST',
+        'header'  => 'Content-Type: application/json'."\r\n",
+        'content' => $cap_body,
+        'timeout' => 10,
+    ]
+];
+//echo '<pre>'.print_r($_POST, true)."\n".print_r($cap_opts, true).'</pre>';
+$cap_context  = stream_context_create($cap_opts);
+$cap_url = 'https://captcha.cbn-alpin.fr/'.$saisie_flore_config['captcha-site-key'].'/siteverify';
+$cap_verify = file_get_contents($cap_url, false, $cap_context);
+
+if ($cap_verify === false) {
+    exit('Erreur de connexion au service reCAPTCHA');
+} else {
+    $cap_response = json_decode($cap_verify, true);
+    if (!$cap_response['success']) {
+        exit('reCAPTCHA invalide');
+    }
+}
+
 //===== Infos où =====
 $objet = $_POST['objet'];
 $centroide = $_POST['centroide'];
@@ -113,9 +141,7 @@ $message_html .= "</ul><br />
 $message_txt = strip_tags($message_html);
 
 $headers = "Reply-To: $expediteur <$mail>".$passage_ligne;
-if (isset($_POST['recevoir'])) {
-    $headers .= "Cc: $mail".$passage_ligne;
-}
+
 $headers .= "MIME-Version: 1.0".$passage_ligne;
 $headers .= "Content-Type: multipart/mixed;".$passage_ligne." boundary=\"".$boundary."\"".$passage_ligne;
 

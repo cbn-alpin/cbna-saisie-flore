@@ -141,10 +141,11 @@ if (! file_exists('config.php')) {
         <div class="row">
           <div id="valid" class="form-group">
               <div class="col-sm-9">
-                <label>
-                    <input type="checkbox" value="recevoir" name="recevoir" id="recevoir">
-                    Recevoir une copie du mail <span class="glyphicon glyphicon-envelope"></span>
-                </label>
+                <cap-widget
+                  id="cap"
+                  data-cap-api-endpoint="https://captcha.cbn-alpin.fr/<?php echo $saisie_flore_config['captcha-site-key']; ?>/"
+                  onsolve=""
+                ></cap-widget>
               </div>
               <div class="col-sm-3">
                 <button type="submit" class="btn btn-primary">
@@ -195,6 +196,9 @@ if (! file_exists('config.php')) {
     <!-- Leaflet Fullscreen -->
     <link rel="stylesheet" href="plugins/control-fullscreen/Control.FullScreen.css" />
     <script type="text/javascript" src="plugins/control-fullscreen/Control.FullScreen.js"></script>
+
+    <!-- Captcha - Cap -->
+    <script src="https://cdn.jsdelivr.net/npm/@cap.js/widget"></script>
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="css/style.css" />
