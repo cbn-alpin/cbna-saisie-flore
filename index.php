@@ -144,6 +144,10 @@ if (! file_exists('config.php')) {
                 <cap-widget
                   id="cap"
                   data-cap-api-endpoint="https://captcha.cbn-alpin.fr/<?php echo $saisie_flore_config['captcha-site-key']; ?>/"
+                  data-cap-i18n-verifying-label="En cours de vérification..."
+                  data-cap-i18n-initial-state="Je suis un humain"
+                  data-cap-i18n-solved-label="Je suis un humain"
+                  data-cap-i18n-error-label="Erreur"
                   onsolve=""
                 ></cap-widget>
               </div>
