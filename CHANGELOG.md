@@ -8,13 +8,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.1.1] - 2025-07-09
+
+### Fixed
+
+- Correctly check for the presence of uploaded files.
+
 ## [v1.1.0] - 2025-07-08
 
 ### Added
 
+- Compatibility with PHP v8.4.
 - Add captcha Cap to form to avoid spam.
 
 ### Removed
+
 - Remove the ability to receive a copy of the form content by email to avoid spam.
 
 ## [v1.0.2] - 2024-03-07
