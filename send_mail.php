@@ -87,10 +87,11 @@ if (isset($_POST['remarque'])) {
 }
 
 //===== Vérification et préparation des pièces jointes =====
-$fichiersAJoindre = [];
-if (!empty($_FILES['photo'])) {
+$lesFichiers = [];
+if (isset($_FILES['photo']['name']) && array_sum($_FILES['photo']['name']) > 0) {
+    $fichiersAJoindre = [];
     foreach ($_FILES['photo'] as $key => $value) {
-        foreach ($value as $k=>$v) {
+        foreach ($value as $k => $v) {
             $fichiersAJoindre[$k][$key] = $v;
         }
     }
@@ -164,7 +165,7 @@ $message .= $passage_ligne.$message_html.$passage_ligne;
 $message .= $passage_ligne."--".$boundary_alt."--".$passage_ligne;
 
 //===== Pièce(s) jointe(s) =====
-foreach($lesFichiers as $fileArray) {
+foreach ($lesFichiers as $fileArray) {
     if (!empty($fileArray['nom'])) {
         $message.= $passage_ligne."--".$boundary.$passage_ligne;
 
