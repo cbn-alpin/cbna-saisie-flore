@@ -88,7 +88,7 @@ if (isset($_POST['remarque'])) {
 
 //===== Vérification et préparation des pièces jointes =====
 $lesFichiers = [];
-if (isset($_FILES['photo']['name']) && array_sum($_FILES['photo']['name']) > 0) {
+if (isset($_FILES['photo']['name'][0]) && !empty($_FILES['photo']['name'][0])) {
     $fichiersAJoindre = [];
     foreach ($_FILES['photo'] as $key => $value) {
         foreach ($value as $k => $v) {

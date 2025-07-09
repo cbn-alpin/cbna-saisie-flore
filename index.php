@@ -140,7 +140,7 @@ if (! file_exists('config.php')) {
 
         <div class="row">
           <div id="valid" class="form-group">
-              <div class="col-sm-9">
+              <div class="col-sm-offset-6 col-sm-3">
                 <cap-widget
                   id="cap"
                   data-cap-api-endpoint="https://captcha.cbn-alpin.fr/<?php echo $saisie_flore_config['captcha-site-key']; ?>/"
