@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [v1.1.1] - 2025-07-09
 
+### Added
+
+- Translate Captacha messages to french.
+
 ### Fixed
 
 - Correctly check for the presence of uploaded files.
